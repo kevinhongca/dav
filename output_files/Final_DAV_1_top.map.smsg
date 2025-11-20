@@ -1,0 +1,6 @@
+Info (10281): Verilog HDL Declaration information at 4Point_FFT.sv(14): object "done" differs only in case from object "DONE" in the same scope File: C:/Users/daowi/Downloads/Final_DAV_1_restored/4Point_FFT.sv Line: 14
+Info (10281): Verilog HDL Declaration information at FFT_16Point.sv(8): object "done" differs only in case from object "DONE" in the same scope File: C:/Users/daowi/Downloads/Final_DAV_1_restored/FFT_16Point.sv Line: 8
+Info (10281): Verilog HDL Declaration information at otherFFT.sv(2): object "f" differs only in case from object "F" in the same scope File: C:/Users/daowi/Downloads/Final_DAV_1_restored/otherFFT.sv Line: 2
+Info (10281): Verilog HDL Declaration information at otherFFT.sv(4): object "reset" differs only in case from object "RESET" in the same scope File: C:/Users/daowi/Downloads/Final_DAV_1_restored/otherFFT.sv Line: 4
+Info (10281): Verilog HDL Declaration information at otherFFT.sv(9): object "done" differs only in case from object "DONE" in the same scope File: C:/Users/daowi/Downloads/Final_DAV_1_restored/otherFFT.sv Line: 9
+Warning (10273): Verilog HDL warning at altera_modular_adc_control_fsm.v(718): extended using "x" or "z" File: C:/Users/daowi/Downloads/Final_DAV_1_restored/db/ip/adc1/submodules/altera_modular_adc_control_fsm.v Line: 718

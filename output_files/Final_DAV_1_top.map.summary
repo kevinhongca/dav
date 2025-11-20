@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Thu Jun  6 18:30:09 2024
+Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+Revision Name : Final_DAV_1_top
+Top-level Entity Name : Final_DAV_1_top
+Family : MAX 10
+Total logic elements : 11,006
+    Total combinational functions : 8,357
+    Dedicated logic registers : 3,654
+Total registers : 3654
+Total pins : 28
+Total virtual pins : 0
+Total memory bits : 768
+Embedded Multiplier 9-bit elements : 60
+Total PLLs : 3
+UFM blocks : 0
+ADC blocks : 1
