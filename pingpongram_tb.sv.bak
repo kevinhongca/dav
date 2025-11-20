@@ -1,0 +1,18 @@
+
+/*
+`timescale 1ns/1ns
+
+module PingPongRam_tb(output logic [7:0] dataRead, output logic writeEnable_reg); 
+
+
+  parameter CLK_PERIOD = 20;
+logic clk;
+logic clk_25MHz;
+always begin
+    #((CLK_PERIOD / 2)) clk = ~clk;
+  end
+myPLL myPLL_instance(.inclk0 (clk),
+	 .c0 (clk_25MHz));
+	 
+
+	 PingPongRam(clk_25MHz, */

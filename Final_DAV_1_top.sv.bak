@@ -1,0 +1,72 @@
+module Final_DAV_1_top(
+//	output reg clk
+	input clk, 
+	input adc_clk,
+	output [9:0] leds
+);
+
+
+	wire [11:0] mic_output;
+	adc1 mic_adc1(
+		.CLOCK(adc_clk),
+		.RESET(0),
+		.CH0(mic_output)
+	);
+	assign leds = mic_output[11:2];
+
+	logic signed [11:0] samples [0:15];
+	logic signed [35:0] frequencies [0:15];
+	reg reset;
+	reg start;
+	wire done;
+	
+	FFT_16Point FFT_16 (
+		samples,
+		clk,
+		reset,
+		start,
+		frequencies,
+		done
+	);
+
+	initial begin
+//		clk = 0;
+		reset = 0;
+		start = 0;
+		
+		samples[0] = 12'd000;
+		samples[1] = 12'd000;
+		samples[2] = 12'd000;
+		samples[3] = 12'd000;
+		samples[4] = 12'd000;
+		samples[5] = 12'd000;
+		samples[6] = 12'd000;
+		samples[7] = 12'd000;
+		samples[8] = 12'd000;
+		samples[9] = 12'd000;
+		samples[10] = 12'd000;
+		samples[11] = 12'd000;
+		samples[12] = 12'd000;
+		samples[13] = 12'd000;
+		samples[14] = 12'd000;
+		samples[15] = 12'd000;
+		
+		#100 start = 1;
+	end
+	
+/*	always begin
+		#5 clk = ~clk;
+	end */
+
+//For the first tick of clk, I want to update sample[0] with the value of mic_output. 
+//Then for the next tick of clk, I want to shift the value in sample[0] to sample[1], 
+//and add the new value of mic_output to sample[0]. And so on.
+   always @(posedge clk) begin
+        integer j;
+        for (j = 15; j > 0; j = j - 1) begin
+            samples[j] = samples[j - 1]; //make the shift in samples
+        end
+        samples[0] = mic_output; //update sample[0] with new mic output
+   end
+
+endmodule
